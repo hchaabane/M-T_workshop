@@ -5,7 +5,7 @@ from transformers import pipeline
 from google.cloud import firestore
 import os
 
-#def app():
+#def app(): -
 #
 #    st.write("This is my first app:") #Affichage d'un titre dans l'app
 
