@@ -11,11 +11,7 @@ import os
 
 
 
-
-
-
-if __name__ == '__main__':
-
+def app():
     db = firestore.Client.from_service_account_info(st.secrets["gcp_service_account"])
     unmasker = pipeline('fill-mask', model='distilbert-base-uncased')
     input = st.text_input('Put your text')
@@ -29,5 +25,7 @@ if __name__ == '__main__':
             u"table_results": result
         }
         db.collection("posts").document(input).set(data)
-    #app()
-    # test
+
+
+if __name__ == '__main__':
+    app()
